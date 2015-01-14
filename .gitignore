@@ -6,3 +6,6 @@
 # whitelist
 !/.gitignore
 !/myst3env.sublime-project
+!/README.md
+!/User
+!/User/Preferences.sublime-settings

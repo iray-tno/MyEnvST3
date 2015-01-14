@@ -1,8 +1,2 @@
-{
-	"folders":
-	[
-		{
-			"path": "./"
-		}
-	]
-}
+//filename #{projectname}.sublime-project
+{"folders":[{"path": "./"}]}
