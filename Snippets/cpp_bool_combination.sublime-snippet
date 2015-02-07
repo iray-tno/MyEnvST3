@@ -1,0 +1,33 @@
+<!-- Combination -->
+<snippet>
+<content><![CDATA[
+/* Usage:
+  int n,r; vector<bool> comb;
+  prepare_bool_combination(n,r,comb);
+  do{
+    //do_something
+    for(int i = 0; i < N; ++i){
+      if(perm[i]) //i is choosed
+      else    //i isnt choosed
+    }   
+  }while(next_bool_combination(comb));
+*/
+
+#include <vector>
+#include <algorithm>
+
+inline bool prepare_bool_combination(int n,int r,std::vector<bool> &comb){//nCr
+  if(n<r) return false;
+  comb.assign(n,true);
+  for(int i = 0; i < n-r; ++i){ comb[i] = false; }
+  return true;
+}
+
+inline bool next_bool_combination(std::vector<bool> &comb){
+  return std::next_permutation(comb.begin(),comb.end());
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>lib-combination</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+</snippet>

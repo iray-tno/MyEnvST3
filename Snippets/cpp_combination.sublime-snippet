@@ -1,0 +1,49 @@
+<!-- Combination -->
+<snippet>
+<content><![CDATA[
+#include <algorithm>
+
+template< class BI > //BI =  BidirectionalIterator
+bool do_next_combination( BI fa, BI la, BI fb, BI lb){
+  if( fa==la || fb==lb ){ return false; }
+
+  BI target = la, last_elem = lb;
+  --target; --last_elem;
+
+  while( target!=fa && !(*target<*last_elem) ){ --target;}
+
+  bool result = ( target!=fa || *fa<*last_elem );
+  if(result){
+    while( fb!=last_elem && !(*target<*fb) ){ ++fb; }
+    fa = target;
+    std::iter_swap(fa, fb);
+    ++fa; ++fb;
+  }
+
+  if( fa!=la && fb!=lb ){
+    target = la; last_elem = fb;
+    while( target!=fa && last_elem!=lb ) {
+      std::iter_swap(--target, last_elem++);
+    }
+    std::reverse(fa, target);
+    std::reverse(fa, la);
+    std::reverse(last_elem, lb);
+    std::reverse(fb, lb);
+  }
+  return result;
+}
+
+template< class BI > //BI =  BidirectionalIterator
+inline bool next_combination(BI first, BI middle, BI last){
+  return do_next_combination(first, middle, middle, last);
+}
+
+template< class BI > //BI =  BidirectionalIterator
+inline bool prev_combination(BI first, BI middle, BI last){
+  return do_next_combination(middle, last, first, middle);
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>lib-combination</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+</snippet>

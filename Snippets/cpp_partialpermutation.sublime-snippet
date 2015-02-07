@@ -1,0 +1,15 @@
+<!-- PartialPermutation -->
+<snippet>
+<content><![CDATA[
+#include <algorithm>
+
+template< class BI > //BI =  BidirectionalIterator
+inline bool next_partial_permutation(BI first, BI middle, BI last){
+  std::reverse(middle, last);
+  return next_permutation(first, last);
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>lib-partial_permutation</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+</snippet>
