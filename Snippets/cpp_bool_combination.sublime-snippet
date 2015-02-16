@@ -28,6 +28,6 @@ inline bool next_bool_combination(std::vector<bool> &comb){
 }
 ]]></content>
   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-  <tabTrigger>lib-combination</tabTrigger>
+  <tabTrigger>lib-bool_combination</tabTrigger>
   <!-- Optional: Set a scope to limit where the snippet will trigger -->
 </snippet>
