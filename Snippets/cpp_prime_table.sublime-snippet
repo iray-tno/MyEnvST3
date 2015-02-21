@@ -1,0 +1,79 @@
+<!-- Combination -->
+<snippet>
+<content><![CDATA[
+/* Usage:
+  //prime_bool_table関数
+  //iは(0,size]で、is_prime[i] = true iff iは素数　となる配列を作る。
+  vector<bool> is_prime; int table_size = 1000;
+  int p_size = prime_bool_table<int>(table_size,is_prime); //返り値は素数の数
+
+  //prime_table関数
+  //iは(0,upto)までの素数を列挙
+  vector<int> primes;　int upto = 1000;
+  int p_size = prime_table<int>(upto,primes);
+*/
+#include <vector>
+#include <algorithm>
+constexpr bool kOneIsAPrimeNumber = false; //1が素数の方が便利な時trueにする
+
+template<class T>
+int prime_bool_table(const T size,std::vector<bool>& is_prime){
+  is_prime = std::vector<bool>(size,false);
+  double sqrtSize = std::sqrt(size);
+  int index;
+  for(int z = 1; z <= 5; z += 4){
+    for(int y = z; y <= sqrtSize; y += 6){
+      for(int x = 1; x <= sqrtSize && (index = 4*x*x+y*y) <= size; ++x){
+        is_prime[index] = !is_prime[index];
+      }
+      for(int x = y+1; x <= sqrtSize && (index = 3*x*x-y*y) <= size; x += 2){
+        is_prime[index] = !is_prime[index];
+  } } }
+    
+  for(int z = 2; z <= 4; z += 2){
+    for(int y = z; y <= sqrtSize; y += 6){
+      for(int x = 1; x <= sqrtSize && (index = 3*x*x+y*y) <= size; x += 2){
+        is_prime[index] = !is_prime[index];
+      }
+      for(int x = y+1; x <= sqrtSize && (index = 3*x*x-y*y) <= size; x += 2){
+        is_prime[index] = !is_prime[index];
+  } } }
+
+  for(int y = 3; y <= sqrtSize; y += 6){
+    for(int z = 1; z <= 2; ++z){
+      for(int x = z; x <= sqrtSize && (index = 4*x*x+y*y) <= size; x += 3){
+        is_prime[index] = !is_prime[index];
+  } } }
+
+  for(index = 5; index <= sqrtSize; ++index){
+    if(is_prime[index]){
+      for(int k = index*index; k <= size; k+=index*index){
+        is_prime[k] = false;
+  } } }
+
+  if(kOneIsAPrimeNumber&&1<=size) is_prime[1] = true; //1がtrueの方が便利な時
+  if(2<=size) is_prime[2] = true;
+  if(3<=size) is_prime[3] = true;
+
+  return std::count(is_prime.begin(), is_prime.end(), true);
+}
+
+template<class T>
+int prime_table(const T upto,std::vector<T>& primes){
+  std::vector<bool> is_prime;
+  int primes_size = prime_bool_table(upto+1,is_prime);
+  primes = std::vector<T>(primes_size,0);
+
+  for(int i = 0, j = 0; i <= upto; ++i){
+    if(is_prime[i]){
+      primes[j++] = i;
+    }
+  }
+
+  return primes_size;
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>lib-prime_table</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+</snippet>
