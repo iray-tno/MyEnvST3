@@ -2,14 +2,14 @@
 <snippet>
 <content><![CDATA[
 /* Usage:
-  int n,r; vector<bool> comb;
+  int n=1,r=1; vector<bool> comb;
   prepare_bool_combination(n,r,comb);
   do{
     //do_something
-    for(int i = 0; i < N; ++i){
-      if(perm[i]) //i is choosed
-      else    //i isnt choosed
-    }   
+    for(int i = 0; i < n; ++i){
+      if(comb[i]){ /* i is choosed */
+      }else{ /* i isnt choosed */ }
+    }
   }while(next_bool_combination(comb));
 */
 
