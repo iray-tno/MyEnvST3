@@ -1,0 +1,74 @@
+<!-- Combination -->
+<snippet>
+<content><![CDATA[
+/* Usage:
+bool goaled = false; int distance = PINF;
+auto valid = [&](SearchPoint sp){
+  return within(0,sp.x,h)&&within(0,sp.y,w)&&
+    !(is_wall[sp.x][sp.y])&&!(is_searched[sp.x][sp.y]);
+};
+
+auto step = [&](SearchQuery sq){
+  is_searched[sq.p.x][sq.p.y] = true;
+  if(sq.p==goal){
+    goaled = true; distance = sq.d;
+    return false;
+  }
+    return true;
+  };
+
+auto next = [&](SearchPoint p){
+  vector<SearchPoint> sps(4,p);
+  for(int i = 0; i < 4; ++i){
+    sps[i].x += dxy[i];
+    sps[i].y += dxy[i+1];
+  }
+  return sps;
+};
+BFS bfs(start);
+bfs.Search(valid,next,step);
+
+if(goaled) cout << "Yes" << endl;
+else cout << "No" << endl;
+*/
+#include <queue>
+class SearchPoint{
+ public:
+  int x,y;
+  bool operator==(SearchPoint p){ return x==p.x&&y==p.y; }
+};
+
+class SearchQuery{
+ public:
+  SearchPoint p; int d;
+  bool operator==(SearchQuery sq){ return p==sq.p&&d==sq.d; }
+};
+
+class BFS{
+public:
+  BFS(SearchPoint start){ _sqs.push({start,0}); }
+
+  template<class T1,class T2,class T3>
+  void Search(T1 Validator,T2 Next,T3 Step){
+    if(_sqs.empty()) return ;
+    Step(_sqs.front());
+    while(!_sqs.empty()){
+      SearchQuery sq = _sqs.front(); _sqs.pop();
+      int d = sq.d;
+      SearchPoint p = sq.p;
+
+      auto nexts = Next(p);
+      for(auto n : nexts){
+        if(Validator(n)){ _sqs.push({n,d+1}); Step(_sqs.back());}
+      }
+    }
+    return ;
+  }private:
+  std::queue<SearchQuery> _sqs;
+};
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>lib-dfs</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.c++</scope>
+</snippet>

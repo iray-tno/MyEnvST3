@@ -1,0 +1,11 @@
+<!-- Combination -->
+<snippet>
+<content><![CDATA[
+template<class T = int>
+inline bool within(T min_x, T x, T max_x){ return min_x<=x&&x<max_x; }
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>within</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.c++</scope>
+</snippet>

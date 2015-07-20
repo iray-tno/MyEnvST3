@@ -1,0 +1,11 @@
+<!-- Combination -->
+<snippet>
+<content><![CDATA[
+constexpr ${1:int} PINF = std::numeric_limits<${1:int}>::max();
+constexpr ${1:int} MINF = std::numeric_limits<${1:int}>::lowest();
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>inf</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.c++</scope>
+</snippet>
