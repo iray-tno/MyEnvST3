@@ -1,0 +1,32 @@
+<!-- Combination -->
+<snippet>
+<content><![CDATA[
+//にぶたんすにぺっと
+long long int invalid_X,valid_X,middle_X;
+
+//↓書き換える
+invalid_X = 0;     //にぶたん開始点1 : invalidなX
+valid_X	 = n*2+1;  //にぶたん開始点2 : validなX
+bool check_invalid_flag = true;	//invalid_Xがvalidかつそれが答えになる可能性
+auto is_valid = [&](long long int moves){	//validのときtrueを返す関数
+	return 100<moves;
+};
+//↑終わり
+
+if(check_invalid_flag&&is_valid(invalid_X)){
+	valid_X=invalid_X;
+}else{
+	while(1<abs(valid_X-invalid_X)){
+		middle_X = (valid_X+invalid_X)/2;
+		if(is_valid(middle_X)){
+			valid_X=middle_X;
+		}else{
+			invalid_X=middle_X;
+		}
+	}
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>snippet-binarysearch</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+</snippet>
