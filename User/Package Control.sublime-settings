@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"BracketHighlighter",
+		"C++11",
 		"CMake",
 		"ConvertToUTF8",
 		"EditorConfig",
@@ -16,6 +17,9 @@
 		"Package Control",
 		"SCSS",
 		"SideBarEnhancements",
-		"SublimeCodeIntel"
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-contrib-clang",
+		"Terminal"
 	]
 }

@@ -12,3 +12,5 @@
 !/User/Package Control.sublime-settings
 !/Snippets/
 !/Snippets/*
+!/ClangAutoComplete/
+!/ClangAutoComplete/*

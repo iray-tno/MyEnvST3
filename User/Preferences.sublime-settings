@@ -1,8 +1,55 @@
 {
-	"color_scheme": "Packages/Monokai Extended/Monokai Extended Bright.tmTheme",
+	"always_show_minimap_viewport": true,
+	"auto_complete_commit_on_tab": true,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
+	"draw_minimap_border": false,
+	"draw_white_space": "selection",
+	"file_exclude_patterns":
+	[
+		"*.d",
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"*.sublime-workspace"
+	],
 	"font_size": 15,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"C++",
 		"Vintage"
-	]
+	],
+	"indent_to_bracket": false,
+	"rulers":
+	[
+		80,
+		90,
+		100
+	],
+	"shift_tab_unindent": true,
+	"show_encoding": true,
+	"show_line_endings": true,
+	"spell_check": false,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": false,
+	"trim_automatic_white_space": true,
+	"use_tab_stops": true
 }
