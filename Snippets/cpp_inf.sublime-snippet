@@ -1,8 +1,10 @@
 <!-- Combination -->
 <snippet>
 <content><![CDATA[
-constexpr ${1:int} PINF = std::numeric_limits<${1:int}>::max();
-constexpr ${1:int} MINF = std::numeric_limits<${1:int}>::lowest();
+template<class T = int,T divided_by = 10>
+constexpr T PINF(){ return std::numeric_limits<T>::max()/divided_by; }
+template<class T = int,T divided_by = 10>
+constexpr T MINF(){ return std::numeric_limits<T>::lowest()/divided_by; }
 ]]></content>
   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
   <tabTrigger>inf</tabTrigger>

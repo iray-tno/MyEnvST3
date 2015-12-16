@@ -7,12 +7,11 @@
   tuples.push_back(make_tuple(2,"c"));
   tuples.push_back(make_tuple(1,"b"));
 
-  sort(tuples.begin(), tuples.end(),TupleComparer<0>());
-  //"a","b","c"
+  sort(tuples.begin(), tuples.end(),TupleComparer<0>()); //"a","b","c"
 
-  sort(tuples.rbegin(), tuples.rend(),TupleComparer<0>());
-  sort(tuples.begin(), tuples.end(),TupleComparer<0,greater>());
-  //"c","b","a"
+  sort(tuples.rbegin(), tuples.rend(),TupleComparer<0>());  //"c","b","a"
+  sort(tuples.begin(), tuples.end(),TupleComparer<0,greater>());  //"c","b","a"
+
 */
 
 #include <tuple>

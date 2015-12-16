@@ -1,0 +1,19 @@
+<!-- Combination -->
+<snippet>
+<content><![CDATA[
+struct bitsetless{
+    template<long unsigned int _Nb> bool operator()(const bitset<_Nb> &t1, const bitset<_Nb> &t2){
+        return std::less<unsigned long>()(t1.to_ulong(),t2.to_ulong());
+    }
+};
+struct bitsetgrater{
+    template<long unsigned int _Nb> bool operator()(const bitset<_Nb> &t1, const bitset<_Nb> &t2){
+        return std::greater<unsigned long>()(t1.to_ulong(),t2.to_ulong());
+    }
+};
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>lib-bitset_comparer</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.c++</scope>
+</snippet>
