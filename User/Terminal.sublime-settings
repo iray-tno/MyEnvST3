@@ -1,0 +1,4 @@
+{
+    "terminal": "C:/cygwin64/bin/mintty.exe",
+    "parameters": ["/bin/xhere", "/bin/bash", "`%CWD%`"]
+}

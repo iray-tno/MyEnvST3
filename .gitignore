@@ -10,6 +10,11 @@
 !/User
 !/User/Preferences.sublime-settings
 !/User/Package Control.sublime-settings
+!/User/C++.sublime-settings
+!/User/C++11.sublime-settings
+!/User/Preferences.sublime-settings
+!/User/SublimeLinter.sublime-settings
+!/User/Terminal.sublime-settings
 !/Snippets/
 !/Snippets/*
 !/ClangAutoComplete/

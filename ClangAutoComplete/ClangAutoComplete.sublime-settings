@@ -1,10 +1,10 @@
 {
 	/* Header files to fetch completion information from */
 	"include_dirs" : [
-					  "C:\\MinGW\\lib\\gcc\\mingw32\\4.8.1\\include\\c++",
-					  "C:\\MinGW\\lib\\gcc\\mingw32\\4.8.1\\include\\c++\\mingw32",
-					  "C:\\MinGW\\include",
-					  ],
+						"C:\\msys64\\mingw64\\include\\c++\\5.2.0",
+						"C:\\msys64\\mingw64\\include\\c++\\5.2.0\\x86_64-w64-mingw32",
+						"C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include"
+					],
 	/* Temporary file where current file will be written to */
 	// "tmp_file_path" : "/tmp/auto_complete_tmp",
 	/* If file encoding was not detected, assume this instead */
