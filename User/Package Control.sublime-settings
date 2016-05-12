@@ -9,6 +9,7 @@
 		"C++11",
 		"CMake",
 		"ConvertToUTF8",
+		"DocBlockr",
 		"EditorConfig",
 		"IMESupport",
 		"Markdown Extended",
