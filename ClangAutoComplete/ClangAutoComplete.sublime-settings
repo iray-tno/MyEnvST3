@@ -23,5 +23,5 @@
 
 	/* Allow to change the binary or location of clang program */
 	// "clang_binary" : "\"C:\\Program Files (x86)\\LLVM\\bin\\clang++\""
-	"clang_binary" : "clang++"
+	"clang_binary" : "C:\\msys64\\mingw64\\bin\\clang++.exe"
 }
