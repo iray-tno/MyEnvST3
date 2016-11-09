@@ -1,6 +1,7 @@
 {
 	"always_show_minimap_viewport": true,
 	"auto_complete_commit_on_tab": true,
+	"auto_indent": true,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Monokai Extended/Monokai Extended.tmTheme",
 	"draw_minimap_border": false,
@@ -30,6 +31,7 @@
 		"*.sublime-workspace"
 	],
 	"font_size": 15,
+	"font_face": "Ricty Diminished",
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -37,7 +39,6 @@
 		"C++",
 		"Vintage"
 	],
-	"indent_to_bracket": false,
 	"rulers":
 	[
 		80,
@@ -51,5 +52,6 @@
 	"tab_size": 4,
 	"translate_tabs_to_spaces": false,
 	"trim_automatic_white_space": true,
-	"use_tab_stops": true
+	"use_tab_stops": true,
+	"word_wrap": true
 }
