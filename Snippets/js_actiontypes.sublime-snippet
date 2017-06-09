@@ -1,0 +1,16 @@
+<!-- actions -->
+<snippet>
+<content><![CDATA[
+/**
+ * ${1:actionTypesName}のactionTypeリスト
+ */
+const ${1:actionTypesName}ActionTypes = {${0}
+};
+
+export default ${1:actionTypesName}ActionTypes;
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>lib-actiontypes</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.js</scope>
+</snippet>

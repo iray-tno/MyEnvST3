@@ -1,0 +1,33 @@
+<!-- actions -->
+<snippet>
+<content><![CDATA[
+import Immutable from 'immutable';
+
+import ${1:actionTypesName}ActionTypes from './${1:actionTypesName}ActionTypes';
+
+/**
+ * ${1:actionTypesName}のinitialState
+ */
+const initialState = Immutable.fromJS({
+});
+
+/**
+ * ${1:actionTypesName}のReducer
+ *
+ * @param  {State} state   oldState
+ * @param  {Action} action 起こったアクション
+ * @return {State}         newState
+ */
+export default function ${1:actionTypesName}Reducer(state = initialState, action) {
+    switch (action.type) {
+    case ${1:actionTypesName}ActionTypes.${2:ACTION_NAME}:${0}
+    default:
+        return state;
+    }
+}
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>lib-reducer</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.js</scope>
+</snippet>
